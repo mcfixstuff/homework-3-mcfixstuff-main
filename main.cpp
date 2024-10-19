@@ -195,7 +195,7 @@ int main()
         // Create camera transformations
         glm::mat4 view;
         view = camera.GetViewMatrix();
-        glm::mat4 projection;
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
         // TODO: set up the project matrix
 
 

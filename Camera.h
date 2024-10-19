@@ -64,11 +64,11 @@ public:
     }
 
     // TODO: Returns a view matrix so that the camera will rotate with the mouse movement
-    glm::mat4 GetViewMatrix()
-    {
-        glm::mat4 view = glm::mat4(glm::vec4(0, 0, 1, 0), glm::vec4(0, 1, 0, 0), glm::vec4(-1, 0, 0, 0), glm::vec4(0, 0, -1, 1));
-        return view;
-    }
+   glm::mat4 GetViewMatrix()
+{
+    return glm::lookAt(Position, Position + Front, Up);
+}
+
 
     // Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
     void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime)
