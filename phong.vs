@@ -11,12 +11,12 @@ uniform mat4 projection; // Projection matrix
 
 void main()
 {
-    // Transform the vertex position to world space and pass to fragment shader
+    // transform the vertex position to world space and pass to fragment shader
     FragPos = vec3(model * vec4(position, 1.0));
 
-    // Transform the normal to world space (account for non-uniform scaling)
+    // transform the normal to world space (account for non-uniform scaling)
     Normal = mat3(transpose(inverse(model))) * normal;
 
-    // Transform the vertex position to clip space for rendering
+    // transform the vertex position to clip space for rendering
     gl_Position = projection * view * vec4(FragPos, 1.0);
 }

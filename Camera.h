@@ -63,7 +63,7 @@ public:
         this->updateCameraVectors();
     }
 
-    // TODO: Returns a view matrix so that the camera will rotate with the mouse movement
+
    glm::mat4 GetViewMatrix()
 {
     return glm::lookAt(Position, Position + Front, Up);

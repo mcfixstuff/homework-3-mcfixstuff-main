@@ -196,14 +196,12 @@ int main()
         glm::mat4 view;
         view = camera.GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
-        // TODO: set up the project matrix
-
-
-        // Get the uniform locations
+        
+        // get the uniform locations
         GLint modelLoc = glGetUniformLocation(lightingShader.Program, "model");
         GLint viewLoc  = glGetUniformLocation(lightingShader.Program,  "view");
         GLint projLoc  = glGetUniformLocation(lightingShader.Program,  "projection");
-        // Pass the matrices to the shader
+        // pass the matrices to the shader
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
